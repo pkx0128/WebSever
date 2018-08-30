@@ -1,4 +1,5 @@
 <?php
+//定义自定义异常类
     class CustomException extends Exception{
         public function customMessage(){
             $msg =  $this->getLine().$this->getFile().$this->getMessage(); 
