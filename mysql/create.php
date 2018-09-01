@@ -11,4 +11,6 @@
             echo "创建my_db失败".mysqli_error();
         }
     }
+    // 关闭数据库
+    mysqli_colose($con);
 ?>
