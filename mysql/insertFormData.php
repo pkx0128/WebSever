@@ -11,6 +11,7 @@
         mysqli_select_db($con,"my_db");
         $sql = "INSERT INTO persons (FirstName,LastName,Age) VALUES ('$firstName','$lastName',$age);";
         // echo $sql;
+        echo mysqli_query($con,$sql);
         if(!mysqli_query($con,$sql)){
             die("数据添加失败".mysqli_error());
         }else{
