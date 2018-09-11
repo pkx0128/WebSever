@@ -16,7 +16,9 @@
                             document.getElementById("ajaxDiv").innerHTML = xmlhttp.responseText;
                         }
                     }
-                    xmlhttp.open("GET","hello.php",true);
+                    // xmlhttp.open("GET","hello.php",true);
+                    // 增加随机数避免收回的是缓存信息
+                    xmlhttp.open("GET","hello.php?t="+Math.random(),true);
                     xmlhttp.send();
                 }
             </script>
