@@ -17,8 +17,10 @@
                         }
                     }
                     // xmlhttp.open("GET","hello.php",true);
-                    // 增加随机数避免收回的是缓存信息
-                    xmlhttp.open("GET","hello.php?t="+Math.random(),true);
+                    // 增加随机数参数避免收回的是缓存信息
+                    // xmlhttp.open("GET","hello.php?t="+Math.random(),true);
+                    // 增加参数的请求
+                    xmlhttp.open("GET","hello.php?name=xiaoming&age=18",true);
                     xmlhttp.send();
                 }
             </script>
