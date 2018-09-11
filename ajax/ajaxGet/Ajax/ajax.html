@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            var xmlhttp = null;
+            function loadAjaxData(url,cfun){
+                if(window.XMLHttpRequest){
+                    xmlhttp=new XMLHttpRequest();
+                }else{
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = cfun;
+                xmlhttp.open("GET",url,true);
+                xmlhttp.send();
+            }
+            function myfunction(){
+                loadAjaxData("ajax.php?t="+Math.random(),function(){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status==200){
+                        document.getElementById("divID").innerHTML=xmlhttp.responseText;
+                    }
+                })  
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ajax</h1>
+        <div id="divID"></div>
+        <button onclick="myfunction()">Ajax</button>
+    </body>
+</html>
