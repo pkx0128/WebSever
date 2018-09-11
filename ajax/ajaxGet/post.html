@@ -1,0 +1,23 @@
+<html>
+    <script type = "text/javascript">
+        function loadAjax(){
+            var xmlhttp = null;
+            if(window.XMLHttpRequest){
+                xmlhttp = new XMLHttpRequest();
+            }else{
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange =function(){
+                if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                    document.getElementById("postDIV").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("POST","postHello.php",true);
+            xmlhttp.send();
+        }
+    </script>
+    <body>
+        <div id="postDIV"></div>
+        <button onclick="loadAjax()" >Ajax</button>
+    </body>
+</html>
