@@ -9,11 +9,12 @@
             }
             xmlhttp.onreadystatechange =function(){
                 if(xmlhttp.readyState==4 && xmlhttp.status==200){
-                    document.getElementById("postDIV").innerHTML = xmlhttp.responseText;
+                    document.getElementById("postDIV").innerHTML = xmlhttp.response;
                 }
             }
             xmlhttp.open("POST","postHello.php",true);
-            xmlhttp.send();
+            xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            xmlhttp.send("name=pp&age=12");
         }
     </script>
     <body>
