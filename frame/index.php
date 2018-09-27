@@ -22,10 +22,12 @@
     }else{
         ini_set('display_error','off');
     }
-    echo IMOOC;
+    // echo IMOOC;
     // 加载函数库
     include CORE.'/common/function.php';
     include CORE.'/imooc.php';
+    // 自动加载类
+    spl_autoload_register('\core\imooc::load');
     // 启动框架
     \core\imooc::run();
 ?>
