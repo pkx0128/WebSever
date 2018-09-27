@@ -9,11 +9,11 @@
 
 
     // 项目根目录
-    define('IMOOC',realpath('/'));
+    define('IMOOC',realpath('./'));
     // 项目核心文件目录
-    define('CORE','core');
+    define('CORE',IMOOC.'/core');
     // 项目文件目录
-    define('APP','app');
+    define('APP',IMOOC.'/app');
     // 定义是否开启调试模式常量
     define('DEBUG',true);
     // 判断调试模式
@@ -22,10 +22,10 @@
     }else{
         ini_set('display_error','off');
     }
-
+    echo IMOOC;
     // 加载函数库
     include CORE.'/common/function.php';
-    
     include CORE.'/imooc.php';
-    \core\IMOOC ::run();
+    // 启动框架
+    \core\imooc::run();
 ?>

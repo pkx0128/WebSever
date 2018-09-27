@@ -1,8 +1,8 @@
 <?php
     namespace core;
     
-    class IMOOC {
-        public static function run(){
+    class imooc {
+        static public function run(){
             echo "OK";
         }
     }
