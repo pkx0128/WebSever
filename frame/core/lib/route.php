@@ -19,20 +19,21 @@
                 $path = $_SERVER['REQUEST_URI'];
                 // 去除URI左侧的/
                 $path = trim($path,'/');
+                // print_r($path);
                 // 以/为界分割URI
                 $patharr = explode('/',$path);
-                print_r($patharr);
+                // print_r($patharr);
                 if(isset($patharr[0])){
-                    $this->$ctr = $patharr[0];
+                    $this->ctr = $patharr[0];
                 }
                 if(isset($patharr[1])){
-                    $this->$action = $patharr[1];
+                    $this->action = $patharr[1];
                 }else{
-                    $this->$action = "index";
+                    $this->action = "index";
                 }    
              }else{
-               $this->$ctr = 'index';
-                $this->$action = 'index';
+               $this->ctr = 'index';
+                $this->action = 'index';
              }
          }           
     }

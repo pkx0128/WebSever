@@ -5,7 +5,20 @@
         public static $fileMap = array();
         static public function run(){
             // echo "OK";
-           $route =  new \core\lib\route();
+           $routes =  new \core\lib\route();
+           $ctrClass = $routes->ctr;
+           $action = $routes->action;
+           $ctrFile = APP.'/ctr/'.$ctrClass.'ctr.PHP';
+           $ctrFileClass = MODEL.'\ctr\\'.$ctrClass.'ctr';
+        //    print_r($ctrFile);
+           if(is_file($ctrFile)){
+                include $ctrFile;
+                $ctrl = new $ctrFileClass();
+                $ctrl->$action();
+           }else{
+               throw new Exception("找不到控制器">$ctrClass);
+           }
+
         }
         // 自动加载未引入的类
         static public function load($class){
@@ -17,7 +30,7 @@
                 $file =  IMOOC.'/'.$class.".php";
                 if(is_file($file)){
                     include $file;
-                    $fileMap[$class] = $class;
+                    self::$fileMap[$class] = $class;
                 }else {
                     return false;
                 }

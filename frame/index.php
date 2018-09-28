@@ -14,6 +14,8 @@
     define('CORE',IMOOC.'/core');
     // 项目文件目录
     define('APP',IMOOC.'/app');
+    // 定义项目命名空间
+    define('MODEL','\app');
     // 定义是否开启调试模式常量
     define('DEBUG',true);
     // 判断调试模式
