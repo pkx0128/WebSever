@@ -5,8 +5,9 @@
         public static $fileMap = array();
         static public function run(){
             // echo "OK";
-           $route =  new \core\route();
+           $route =  new \core\lib\route();
         }
+        // 自动加载未引入的类
         static public function load($class){
             // echo $class;
             if(isset($fileMap[$class])){
