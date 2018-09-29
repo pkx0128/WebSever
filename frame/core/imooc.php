@@ -3,6 +3,7 @@
     
     class imooc {
         public static $fileMap = array();
+        public $assign;
         static public function run(){
             // echo "OK";
            $routes =  new \core\lib\route();
@@ -33,6 +34,18 @@
                 }else {
                     return false;
                 }
+            }
+        }
+
+        function assign($name,$value){
+            $this->assign[$name]=$value;
+        }
+        function display($file){
+            $file = APP.'/views/'.$file;
+            if(is_file($file)){
+                // print_r($file);
+                extract($this->assign);
+                include $file;
             }
         }
     }
