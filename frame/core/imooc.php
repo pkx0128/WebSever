@@ -18,7 +18,6 @@
            }else{
                throw new Exception("找不到控制器">$ctrClass);
            }
-
         }
         // 自动加载未引入的类
         static public function load($class){
